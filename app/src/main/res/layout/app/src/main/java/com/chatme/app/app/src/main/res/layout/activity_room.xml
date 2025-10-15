@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D0D0D">
+
+    <!-- Room Header -->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#1A1A1A"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp">
+
+        <TextView
+            android:id="@+id/roomName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Voice Room"
+            android:textColor="#FFD700"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@android:drawable/ic_menu_more"
+            android:tint="#FFD700" />
+    </LinearLayout>
+
+    <!-- Mic Slots -->
+    <GridLayout
+        android:id="@+id/micGrid"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@id/header"
+        android:columnCount="3"
+        android:padding="20dp"
+        android:alignmentMode="alignMargins">
+
+        <!-- Host Mic -->
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@android:drawable/ic_btn_speak_now"
+            android:tint="#FFD700"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_marginBottom="20dp" />
+
+        <!-- 8 User Mics -->
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@android:drawable/ic_btn_speak_now"
+            android:tint="#CCCCCC"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_margin="10dp" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@android:drawable/ic_btn_speak_now"
+            android:tint="#CCCCCC"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_margin="10dp" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@android:drawable/ic_btn_speak_now"
+            android:tint="#CCCCCC"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:layout_margin="10dp" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@android:drawable/ic_btn_speak_now"
+            android:tint="#CCCCCC"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:layout_margin="10dp" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@android:drawable/ic_btn_speak_now"
+            android:tint="#CCCCCC"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:layout_margin="10dp" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@android:drawable/ic_btn_speak_now"
+            android:tint="#CCCCCC"
+            android:layout_row="2"
+            android:layout_column="2"
+            android:layout_margin="10dp" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@android:drawable/ic_btn_speak_now"
+            android:tint="#CCCCCC"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:layout_margin="10dp" />
+    </GridLayout>
+
+    <!-- Chat Area -->
+    <ScrollView
+        android:id="@+id/chatScroll"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/micGrid"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:id="@+id/chatContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <!-- Message Input -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="#1A1A1A"
+        android:paddingHorizontal="10dp"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/messageInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Type message..."
+            android:textColor="#FFFFFF"
+            android:textColorHint="#999999"
+            android:background="@android:color/transparent"
+            android:inputType="text" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@android:drawable/ic_menu_send"
+            android:tint="#FFD700"
+            android:layout_marginStart="8dp" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@android:drawable/ic_menu_share"
+            android:tint="#FFD700"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+</RelativeLayout>
