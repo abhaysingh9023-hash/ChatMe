@@ -1,0 +1,38 @@
+package com.chatme.app
+
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+
+class SignupActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_signup)
+
+        val nameInput = findViewById<EditText>(R.id.nameInput)
+        val emailInput = findViewById<EditText>(R.id.emailInput)
+        val passwordInput = findViewById<EditText>(R.id.passwordInput)
+        val signupButton = findViewById<Button>(R.id.signupButton)
+        val loginText = findViewById<TextView>(R.id.loginText)
+
+        signupButton.setOnClickListener {
+            val name = nameInput.text.toString()
+            val email = emailInput.text.toString()
+            val password = passwordInput.text.toString()
+
+            if (name.isEmpty() || email.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Account created (Demo)", Toast.LENGTH_SHORT).show()
+                finish() // बाद में यहाँ LoginActivity खुलेगा
+            }
+        }
+
+        loginText.setOnClickListener {
+            finish()
+        }
+    }
+}
